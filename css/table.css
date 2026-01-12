@@ -1,0 +1,450 @@
+/* start global */
+:root {
+    --main-color: #d35400;
+    --sec-color: #ffef5e;
+    --third-color: #b9ce41;
+    --fourth-color: #f6af07;
+    --fourth-color: #356600;
+    --section-color: #eef0f6;
+    --main-padding: 20px;
+    --main-transition: .5s;
+}
+
+* {
+
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "cairo", sans-serif;
+
+}
+
+ul {
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+body {
+    background-color: #b9ce41;
+}
+
+table {
+    margin: 150px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: white;
+    position: relative;
+    background-color: #356600;
+    box-shadow: 0 0 10px #b9ce41;
+
+}
+
+.temperature table::before {
+    content: "";
+    display: block;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: #d35400;
+
+}
+
+table thead tr:nth-child(2) {
+    background-color: #356600;
+}
+
+table thead tr:nth-child(1) {
+    background-color: #b9ce41;
+}
+
+
+table caption {
+    width: 100%;
+    background-color: #ffef5e;
+    top: -100px;
+    padding: 20px;
+    border-radius: 6px;
+    font-size: 25px;
+    position: relative;
+    border: solid 4px #356600;
+    box-shadow: 0 0 10px #b9ce41;
+
+}
+
+table caption i {
+    margin: 0 100px;
+    font-size: 30px;
+    color: #4e5631;
+    animation: shaking 1.5s infinite;
+}
+
+table caption i::before {
+    background-color: #b9ce41;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: block;
+    line-height: 47px;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffef5e;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fffea1;
+}
+
+table tbody tr:hover {
+    transition: var(--main-transition);
+    background-color: #d35400;
+}
+
+
+.colored-background {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+
+.colored-background::before {
+    content: "";
+    height: calc(100% + 10px);
+    width: 93%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000000;
+    background-color: #f6af07;
+    box-shadow: 0 0 10px #b9ce41;
+    position: absolute;
+    left: 3%;
+
+}
+
+
+
+
+
+.temperature .border {
+    height: 2820px;
+    width: 1320px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #000000;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    background-color: #f6af07;
+    box-shadow: 0 0 10px #b9ce41;
+}
+
+.temperature table caption i {
+    margin: 0 100px;
+    font-size: 30px;
+    color: #4e5631;
+    animation: shaking 1.5s infinite;
+    position: relative;
+}
+
+.temperature table caption i::before {
+    background-color: #b9ce41;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: block;
+    line-height: 50px;
+
+}
+
+
+
+
+@keyframes shaking {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {}
+
+    35% {
+        transform: rotate(-20deg)
+    }
+
+    50% {
+        transform: rotate(15deg)
+    }
+
+    60% {
+        transform: rotate(-13deg)
+    }
+
+    70% {
+        transform: rotate(10deg)
+    }
+
+    100% {
+        transform: rotate(0)
+    }
+}
+
+
+
+
+
+@media (min-width:1290px) {
+
+    .colored-background::before {
+        width: 85.5%;
+        left: 7%;
+        height: calc(100% + 40px);
+    }
+
+
+    table {
+        margin: 90px auto;
+
+    }
+
+    .temperature table caption {
+        width: 100%;
+        font-size: 26px;
+        top: -45px;
+    }
+
+    .temperature table caption i {
+        font-size: 26px;
+    }
+
+    .temperature table caption i {
+        margin: 0 90px;
+    }
+
+    .weight table caption {
+        width: 100%;
+        font-size: 26px;
+        top: -45px;
+    }
+
+    .weight table caption i {
+        font-size: 26px;
+    }
+
+    .weight table caption i {
+        margin: 0 90px;
+    }
+
+    .weight table caption i {
+        margin: 0 90px;
+    }
+
+    table thead {
+        font-size: 22px;
+    }
+
+    table tbody {
+        font-size: 22px;
+    }
+
+}
+
+
+@media (max-width:1289px) {
+
+    .temperature table caption i {
+        margin: 0 45px;
+        font-size: 22px;
+
+    }
+
+    .weight table caption i {
+        margin: 0 45px;
+        font-size: 22px;
+
+    }
+
+    table caption {
+        width: 100%;
+        font-size: 22px;
+        top: -45px;
+    }
+
+
+    table {
+        margin: 90px auto;
+
+    }
+
+    .colored-background::before {
+        width: 89.5%;
+        left: 5%;
+        height: calc(100% + 40px);
+
+    }
+
+
+    table thead {
+        font-size: 20px;
+    }
+
+    table tbody {
+        font-size: 20px;
+    }
+
+
+}
+
+@media (max-width:767px) {
+    .header .links {
+        font-size: 12px;
+    }
+
+    .header .logo {
+        font-size: 13px;
+        font-weight: 900;
+    }
+
+    .header .links>li>a {
+        padding: 0 5px;
+        height: 50px;
+    }
+
+    .header .links .schedule-dropbox li i {
+        padding-right: 5px;
+        padding-left: 8px;
+    }
+
+    .header .links .schedule-dropbox a {
+        padding: 15px 0px 15px 0px;
+        font-size: 13.8px;
+    }
+
+    .colored-background::before {
+        width: 89%;
+        left: 5%;
+    }
+
+    .border {
+        height: 3020px;
+        width: 420px;
+        top: 370px;
+        left: 15px;
+    }
+
+    table {
+        margin: 90px auto;
+
+    }
+
+    table caption {
+        width: 100%;
+        font-size: 20px;
+        top: -45px;
+    }
+
+    table thead tr:first-child th {
+        width: 20%;
+    }
+
+
+
+    .temperature table caption i::before {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .weight table caption i::before {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .temperature table caption i {
+        margin: 0 5px;
+        font-size: 20px;
+    }
+
+    .weight table caption i {
+        margin: 0 5px;
+        font-size: 20px;
+    }
+
+
+    .temperature .border {
+        height: 2850px;
+        width: 400px;
+        top: 250px;
+        left: 6px;
+    }
+
+    .weight .border {
+        height: 3495px;
+        width: 400px;
+        top: 250px;
+        left: 6px;
+    }
+
+
+
+    .footer {
+        padding: 0 0 15px 0px;
+    }
+
+    .footer .imgs {
+        padding-top: 25px;
+
+    }
+
+    .footer .imgs .footerimgs img {
+        width: 48%;
+    }
+
+    .footer .container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .footer .container .contact .social a i {
+        padding: 5px 20px 7px 0;
+    }
+}
+
+
+@media (max-width:470px) {
+
+    table caption {
+        width: 320px;
+        left: 0;
+        font-size: 16px;
+    }
+
+    table thead {
+        font-size: 15px;
+    }
+
+    table tbody {
+        font-size: 16px;
+    }
+
+    table thead tr:first-child th {
+        width: 36%;
+    }
+
+    .colored-background::before {
+        width: 93%;
+        left: 3%;
+    }
+}

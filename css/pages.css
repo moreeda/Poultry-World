@@ -1,0 +1,1358 @@
+/* start global */
+:root {
+
+    --main-color: #d35400;
+    --sec-color: #ffef5e;
+    --third-color: #b9ce41;
+    --fourth-color: #f6af07;
+    --fourth-color: #356600;
+    --section-color: #eef0f6;
+    --main-padding: 20px;
+    --main-transition: .5s;
+}
+
+* {
+
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "cairo", sans-serif;
+
+}
+
+ul {
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+/* start label  */
+.label-holder {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.label {
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #356600;
+    background-color: #ffef5e;
+    box-shadow: 0 0 10px #b9ce41;
+    padding: 10px 20px;
+    position: relative;
+    margin: 100px auto 100px auto;
+    width: fit-content;
+    text-align: center;
+    color: #4e5631;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 1s;
+}
+
+.label span {
+    position: relative;
+    z-index: 10;
+}
+
+.label::before {
+    content: "";
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #d35400;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -50px;
+    box-shadow: 0 0 10px #b9ce41;
+    transition: 1s;
+    box-shadow: none;
+}
+
+.label::after {
+    content: "";
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #d35400;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -50px;
+    box-shadow: 0 0 10px #b9ce41;
+    transition: 1s;
+    box-shadow: none;
+
+}
+
+.label:hover::before {
+    left: 0;
+    /* width: 50%;
+    height: 100%;
+    border-radius: 0; */
+    animation: dotwidth .5s linear forwards;
+}
+
+.label:hover::after {
+    right: 0;
+    /* width: 50%;
+    height: 100%;
+    border-radius: 0; */
+    animation: dotwidth .5s linear forwards;
+
+}
+
+.label:hover {
+    border-color: white;
+    transition-delay: .5s;
+    color: var(--sec-color);
+}
+
+@keyframes dotwidth {
+
+    0%,
+    50%,
+    70% {
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+    }
+
+    80%,
+    100% {
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 2s;
+    }
+}
+
+/* start label  */
+
+@media (max-width:767px) {
+    .special-heading {
+        margin-bottom: 12px;
+    }
+}
+
+/* small  */
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* mediam */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large  */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* very large  */
+@media (min-width:1350px) {
+    .mediciene .container {
+        width: 1335px;
+    }
+
+    .chicks .container {
+        width: 1335px;
+    }
+}
+
+
+/* start mediciene page */
+
+.mediciene {
+    margin-bottom: 100px;
+}
+
+
+
+.mediciene .card-containier {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 43px;
+    position: relative;
+    padding: 200px 0 50px;
+}
+
+.mediciene .card-containier:nth-child(odd)::before {
+    content: "";
+    z-index: -100;
+    width: 150%;
+    height: 100%;
+    background-color: var(--section-color);
+    position: absolute;
+    left: -300px;
+}
+
+
+
+.mediciene .card {
+    position: relative;
+    transition: all 1.5s ease;
+    transform-style: preserve-3d;
+    height: 400px;
+
+}
+
+.mediciene .card-containier .card .front-face,
+.back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 0 10px #ffc107;
+    border-radius: 2rem;
+
+}
+
+.mediciene .card-containier .front-face .stars-holder {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 169px;
+}
+
+
+.mediciene .card-containier .front-face i {
+    color: #ffc107;
+    font-size: 30px;
+}
+
+
+
+.mediciene .card-containier .card .front-face img {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+}
+
+.mediciene .card-containier .card .front-face {
+    background-image: url(../imgs/icons/king2.jpg);
+    /* background-image: url(https://source.unsplash.com/random/300x400); */
+    width: 100%;
+}
+
+.mediciene .card-containier .card .back-face {
+    background-color: #bababa;
+    transform: rotateY(180deg);
+}
+
+.mediciene .card-containier .card .back-face h2 {
+    text-align: center;
+}
+
+.mediciene .card-containier .card .back-face p {
+    padding: 20px;
+    padding-top: 0;
+
+}
+
+.mediciene .card-containier .card:hover {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+
+/* end mediciene page */
+/* start chicks page */
+
+.chicks {
+    margin-bottom: 100px;
+}
+
+
+
+.chicks .card-containier {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-column: 2;
+    gap: 50px;
+    position: relative;
+    padding: 200px 0 50px;
+}
+
+.chicks .card-containier:nth-child(odd)::before {
+    content: "";
+    z-index: -100;
+    height: 100%;
+    background-color: var(--section-color);
+    position: absolute;
+    left: -3%;
+    width: calc(100% + 5.8%);
+}
+
+
+
+.chicks .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 1.5s ease;
+    transform-style: preserve-3d;
+    height: 400px;
+
+}
+
+.chicks .card-containier .card .front-face,
+.back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 0 10px #ffc107;
+    border-radius: 2rem;
+
+}
+
+.chicks .card-containier .front-face .stars-holder {
+    position: absolute;
+    bottom: 315px;
+    left: 80%;
+    transform: translateX(-50%);
+    width: 141px;
+}
+
+
+
+.chicks .card-containier .front-face i {
+    color: #ffc107;
+    font-size: 25px;
+}
+
+
+
+
+.chicks .card-containier .card .chicks-name {
+    position: absolute;
+    bottom: 100px;
+    right: 107px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #d35400;
+
+}
+
+.chicks .card-containier .card .front-face {
+    background-image: url(../imgs/chicks/icons/3.jpg);
+    /* background-image: url(https://source.unsplash.com/random/300x400); */
+    width: 100%;
+
+}
+
+.chicks .card-containier .card .front-face img {
+    display: flex;
+    width: 70%;
+    position: absolute;
+    top: 78%;
+    transform: translateY(-50%);
+    left: 185px;
+
+}
+
+.chicks .card-containier .card .back-face {
+    background-color: #d35400;
+    transform: rotateY(180deg);
+    color: #356;
+}
+
+.chicks .card-containier .card .back-face h2 {
+    text-align: center;
+    font-weight: 900;
+}
+
+.chicks .card-containier .card .back-face p {
+    padding: 20px;
+    text-align: right;
+    font-weight: 700;
+    line-height: 22px;
+    padding-top: 0;
+    font-size: 16px;
+
+}
+
+.chicks .card-containier .card:hover {
+    transform: rotateY(180deg) translateY(-5px);
+    cursor: pointer;
+}
+
+
+
+
+
+/* start light */
+
+.light .container .cell {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.light .container .cell .image {
+    height: 400px;
+    position: relative;
+}
+
+.light .container .image {
+    margin-top: 100px;
+}
+
+.light .container .cell .image::before {
+    content: "";
+    width: 100px;
+    height: calc(100% + 80px);
+    position: absolute;
+    left: -50px;
+    top: -40px;
+    background-color: #e5e5e5;
+    z-index: -1;
+}
+
+.light .container .cell .image::after {
+    content: "";
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    right: -130px;
+    top: -40px;
+    background-color: white;
+    z-index: -1;
+    border-bottom: 80px solid var(--main-color);
+    border-left: 80px solid var(--main-color);
+}
+
+.light .container .cell .image img {
+
+    height: 100%;
+    border-radius: 6px;
+}
+
+.light .container .cell .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #444;
+    cursor: default;
+}
+
+
+.light .cell .information h2 {
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 900;
+}
+
+.light .cell .information h2::after {
+    content: "";
+    height: 1px;
+    width: calc(100% - 40px);
+    position: absolute;
+    bottom: -27px;
+    left: 20px;
+    background-color: var(--main-color);
+}
+
+.light .cell .information p {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+    width: 670px;
+    line-height: 1.5;
+}
+
+.light .container .two {
+    flex-direction: row-reverse;
+}
+
+.light .two .image {
+    margin-top: 200px;
+}
+
+.light .two .information {
+    margin-left: 60px;
+}
+
+.light .two .information h2 {
+    margin-left: 60px;
+}
+
+
+
+.light .two .information p {
+    padding-left: 80px;
+}
+
+.light .two .information p .bold {
+    font-weight: 900;
+    padding-left: 120px;
+}
+
+.light .container>p {
+    position: absolute;
+    top: 450px;
+    line-height: 1;
+}
+
+.light .two .information .p2 {
+    margin-top: 10px;
+}
+
+.light .two .information .p2 span {
+    line-height: 3;
+}
+
+/* end light */
+
+/* start cycle */
+.cycle {
+    height: 90vh;
+}
+
+.cycle .container {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: " counter info info info info ";
+
+}
+
+.cycle .container .days-counter {
+    grid-area: counter;
+    background-color: var(--section-color);
+    margin-right: 10px;
+    margin-top: 30px;
+    height: fit-content;
+
+
+}
+
+
+
+.cycle .container .days-counter h2 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    background-color: #0075ff;
+    padding: 12px;
+    height: 44px;
+    line-height: 15px;
+}
+
+.cycle .container .days-counter .bottoms {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cycle .container .days-counter [type="button"] {
+    margin: 0 2px 8px;
+    color: #666;
+    transition: var(--main-transition);
+    border: none;
+    background-color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    height: 40px;
+    line-height: 15px;
+    font-size: 16px;
+}
+
+.cycle .container .days-counter [type="button"]:hover {
+    color: var(--main-color);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--main-color);
+    transition: var(--main-transition);
+
+}
+
+.cycle .container .day-info {
+    grid-area: info;
+    background-color: #f2f2f2;
+    background-color: var(--section-color);
+    height: calc(100% - 30px);
+    margin-top: 30px;
+}
+
+.cycle .container .every-day {
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #0075ff;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    flex-direction: row-reverse;
+    height: 85px;
+    align-items: center;
+}
+
+.cycle .container .mediciene {
+    position: relative;
+    text-align: right;
+    margin: 0 50px;
+    counter-reset: steps;
+}
+
+.cycle .container .mediciene::before {
+    content: "";
+    background-color: #c2c2c2;
+    position: absolute;
+    right: -40px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+}
+
+.cycle .container .mediciene .cell {
+    margin-bottom: 30px;
+    background-color: white;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+
+.cycle .container .mediciene .cell h2 {
+    margin: 0;
+    padding: 10px;
+    height: 47.6px;
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    text-wrap: nowrap;
+}
+
+.cycle .container .mediciene .cell .flex {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.cycle .container .mediciene .cell .flex p {
+    margin: 0;
+}
+
+.cycle .cell:before {
+    counter-increment: steps;
+    content: counter(steps);
+    position: absolute;
+    right: -61px;
+    top: 28px;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    -webkit-box-shadow: 0 0 20px #ccc;
+    -moz-box-shadow: 0 0 20px #ccc;
+    box-shadow: 0 0 20px #ccc;
+    padding-right: 1px;
+}
+
+.cycle .cell::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 40px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.cycle .container .mediciene .sec {
+    display: none;
+}
+
+.cycle .container .mediciene .third {
+    display: none;
+}
+
+.cycle .cell:nth-child(1):before {
+    background-color: #00a8ff;
+}
+
+.cycle .cell:nth-child(2):before {
+    background-color: #e84118;
+}
+
+.cycle .cell:nth-child(3):before {
+    background-color: #356600;
+}
+
+
+.cycle .container .note {
+    display: flex;
+    padding: 30px;
+    justify-content: right;
+    text-align: center;
+    background-color: #0075ff;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    height: 85px;
+    align-items: center;
+}
+
+
+
+/* end cycle */
+
+@media (min-width : 767px) {
+
+    .mediciene .card-containier:nth-child(odd)::before {
+        width: calc(100% + 90px);
+        left: -45px;
+    }
+}
+
+
+@media (min-width : 992px) {
+
+    .mediciene .card-containier:nth-child(odd)::before {
+        width: calc(100% + 90px);
+        left: -45px;
+    }
+
+    .mediciene .card-containier {
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 40px;
+    }
+
+
+}
+
+
+@media (min-width : 1200px) {
+
+    .mediciene .card-containier:nth-child(odd)::before {
+        width: calc(100% + 60px);
+        left: -30px;
+    }
+
+
+    .mediciene .card-containier {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+}
+
+
+
+@media (min-width : 1350px) {
+
+    .mediciene .card-containier:nth-child(odd)::before {
+        width: calc(100% + 220px);
+        left: -110px;
+    }
+}
+
+
+
+
+@media (max-width : 767px) {
+
+    .header {
+        height: 50px;
+    }
+
+    .header .logo {
+        font-size: 14px;
+        position: absolute;
+        left: 20px;
+        top: 0px;
+    }
+
+    .header .links {
+        font-size: 14px;
+        padding-left: 0;
+        position: absolute;
+        right: 0;
+        top: 0px;
+    }
+
+    .header .links .schedule-dropbox li i {
+        padding-right: 5px;
+        padding-left: 8px;
+    }
+
+    .header .links .schedule-dropbox a {
+        padding: 15px 0px 15px 0px;
+        font-size: 13.8px;
+    }
+
+
+    .label {
+        font-size: 19px;
+        margin: 0;
+    }
+
+    .label-holder {
+        top: 50px;
+    }
+
+
+    .light .container .cell {
+
+        flex-direction: column-reverse;
+    }
+
+    .light .two .information p {
+        padding-left: 0px;
+    }
+
+    .light .two .information {
+        margin-left: 0px;
+    }
+
+    .light .two .information h2 {
+        margin-left: 0;
+    }
+
+    .light .two .information .p2 {
+        margin-top: 50px;
+    }
+
+    .light .two .information p .bold {
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .light .container .cell .image::after {
+        content: "";
+        width: 50px;
+        height: 140px;
+        right: 15px;
+        top: -20px;
+        border-bottom: 40px solid var(--main-color);
+        border-left: 40px solid var(--main-color);
+    }
+
+    .light .container .cell .image {
+        height: 200px;
+        margin-top: 50px;
+        margin-left: 90px;
+        margin-bottom: 50px;
+    }
+
+    .light .container .cell .image img {
+        height: 100%;
+    }
+
+    .light .container .cell .image::before {
+        content: "";
+        width: 45px;
+        height: calc(100% + 40px);
+        left: -25px;
+        top: -20px;
+    }
+
+    .light .cell .information p {
+        font-weight: bold;
+        font-size: 14px;
+        margin: 0;
+        text-align: left;
+        width: 350px;
+        line-height: 1.5;
+    }
+
+
+    .chicks .card-containier {
+        padding: 150px 0 50px;
+    }
+
+
+    .chicks .card-containier .card .back-face p {
+        padding: 16px 10px 0 0;
+    }
+
+    .mediciene .container {
+        margin: 0 auto;
+        padding: 0 8px;
+    }
+
+    .mediciene .card-containier {
+        grid-template-columns: repeat(auto-fill, minmax(193px, 1fr));
+        column-gap: 10px;
+        row-gap: 15px;
+        padding: 150px 0 50px;
+    }
+
+    .chicks .card-containier {
+        grid-template-columns: repeat(auto-fill, minmax(227px, 1fr));
+        gap: 40px;
+    }
+
+    .chicks .card-containier .front-face .stars-holder {
+        position: absolute;
+        bottom: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 141px;
+    }
+
+    .chicks .card-containier .card .chicks-name {
+        bottom: 24%;
+        right: 10%;
+    }
+
+    .chicks .card-containier:nth-child(odd)::before {
+        width: calc(100% + 5.8%);
+        left: -3%;
+    }
+
+    .mediciene .card-containier .card .back-face p {
+        padding: 4px;
+    }
+
+    .mediciene .card-containier .card .front-face img {
+        width: 100%;
+        top: 62%;
+        transform: translateY(-50%);
+        left: -112px;
+    }
+
+    .mediciene .card-containier:nth-child(odd)::before {
+
+        left: 0;
+    }
+
+
+    .cycle .container .days-counter [type="button"] {
+        padding: 4px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+    .cycle .container .every-day {
+        font-size: 14px;
+        padding: 0;
+
+    }
+
+    .cycle .container .mediciene .cell {
+
+        font-size: 12px;
+    }
+
+    .cycle .container .note {
+        padding: 0 10px;
+        font-size: 14px;
+        justify-content: center;
+    }
+
+    .cycle .container .note i {
+        color: yellow;
+        padding-left: 6px;
+    }
+
+    .cycle .container .days-counter h2 {
+        font-size: 15px;
+    }
+
+    .cycle .container {
+        display: grid;
+        grid-template-areas: " counter counter counter counter counter "
+            "info info info info info";
+    }
+
+    .cycle .container .days-counter {
+        margin-right: 0;
+        margin-top: 15px;
+    }
+
+    .cycle .container .day-info {
+        margin-top: 10px;
+    }
+
+    .cycle .container .days-counter {
+        margin-right: 0;
+    }
+
+    .cycle .container .every-day {
+        height: 54px;
+    }
+
+    .cycle .container .mediciene .cell {
+        padding: 0 10px;
+
+        margin-bottom: 20px;
+
+    }
+
+}
+
+
+
+@media (max-width: 420px) {
+    .header .links {
+        font-size: 12px;
+    }
+
+    .header .logo {
+        font-size: 13px;
+        font-weight: 900;
+    }
+
+    .header .links>li>a {
+        padding: 0 5px;
+        height: 50px;
+    }
+
+
+    .mediciene .card-containier {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        column-gap: 13px;
+        row-gap: 15px;
+        padding: 150px 0 50px;
+    }
+
+    .label {
+        font-size: 19px;
+        width: fit-content;
+        padding: 10px 5px;
+        margin: 0;
+    }
+
+    .label-holder {
+        top: 50px;
+    }
+
+
+
+
+    .mediciene .card-containier:nth-child(odd)::before {
+        left: -8px;
+        width: calc(100% + 16px);
+    }
+
+    .mediciene .card-containier .front-face i {
+        font-size: 20px;
+    }
+
+    .mediciene .card-containier .front-face .stars-holder {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        width: 115px;
+    }
+
+    .mediciene .card-containier .card .front-face img {
+        width: 90%;
+        top: 55%;
+        transform: translateY(-50%);
+        left: -110px;
+    }
+
+    .mediciene .card {
+
+        height: 257px;
+    }
+
+    .mediciene .card-containier .card .front-face {
+        background-image: url(../imgs/icons/king22.jpg);
+
+    }
+
+
+
+    .chicks .card-containier:nth-child(odd)::before {
+        content: "";
+        z-index: -100;
+        width: calc(100% + 4%);
+        height: 100%;
+        background-color: var(--section-color);
+        position: absolute;
+        left: -2%;
+    }
+
+    .chicks .card-containier .front-face .stars-holder {
+
+        width: 141px;
+    }
+
+    .chicks .card-containier {
+        padding: 120px 0 50px;
+    }
+
+    .chicks .card-containier .card .chicks-name {
+        right: 75px;
+    }
+
+    .chicks .card-containier .card .back-face h2 {
+
+        font-size: 22px;
+    }
+
+    .chicks .card-containier .card .back-face p {
+        padding: 0 5px 0 0;
+        font-size: 14px;
+        font-weight: 900;
+    }
+
+    .cycle .container .days-counter {
+        margin-top: 30px;
+    }
+
+    .cycle .container .mediciene .cell h2 {
+        font-size: 15px;
+    }
+
+    .cycle .container .mediciene {
+        margin: 0 50px 0 30px;
+    }
+}
+
+@media (min-width : 767px) {
+
+    .label {
+        font-size: 21px;
+        margin: 0;
+    }
+
+    .label-holder {
+        top: 50px;
+    }
+
+    .chicks .card-containier {
+        grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
+    }
+
+    .chicks .card-containier .card .chicks-name {
+        right: 55px;
+    }
+
+    .chicks .card-containier .front-face .stars-holder {
+        bottom: 2%;
+        left: 50%;
+    }
+
+    .light .container .cell .image {
+        height: 400px;
+        position: relative;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .light .container .cell .image::before {
+        width: 85px;
+        height: calc(85% + 80px);
+        left: 125px;
+        top: -40px;
+    }
+
+    .light .container .cell .image::after {
+        width: 80px;
+        height: 255px;
+        right: 50px;
+        top: -40px;
+    }
+
+    .light .container .cell .image img {
+        height: 85%;
+    }
+
+    .cycle .container .days-counter [type="button"] {
+        padding: 5px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+
+
+
+
+}
+
+@media (min-width:992px) {
+    .market .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 21px;
+
+    }
+
+    .footer .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 0px;
+    }
+
+    .market .container .box:nth-child(2) a:hover span {
+        transform: translateX(90px);
+    }
+
+    .label {
+        font-size: 23px;
+        margin: 0;
+    }
+
+    .label-holder {
+        top: 50px;
+    }
+
+
+
+    .light .container .cell .image {
+        height: 400px;
+        position: relative;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .light .container .cell .image::before {
+        width: 85px;
+        height: calc(85% + 80px);
+        left: 260px;
+        top: -20px;
+    }
+
+    .light .container .cell .image::after {
+        width: 80px;
+        height: 255px;
+        right: 190px;
+        top: 10px;
+    }
+
+    .light .container .cell .image img {
+        height: 90%;
+    }
+
+
+}
+
+@media (min-width:1200px) {
+    .header .container .logo a::before {
+        background-image: url(../imgs/donate.jpg);
+        opacity: 1;
+        width: 100%;
+
+    }
+
+    .header .logo:hover ::before {
+        opacity: .5;
+    }
+
+    .header .container .logo span {
+        z-index: 15;
+    }
+
+
+    .market .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 21px;
+
+    }
+
+    .footer .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 0px;
+    }
+
+    .market .container .box:nth-child(2) a:hover span {
+        transform: translateX(120px);
+    }
+
+    .chicks .card-containier:nth-child(odd)::before {
+        width: calc(100% + 17.5%);
+        height: 100%;
+        background-color: var(--section-color);
+        position: absolute;
+        left: -9%;
+    }
+
+    .chicks .card-containier .card .chicks-name {
+        right: 28%;
+    }
+
+
+    .light .container .cell .image {
+        height: 400px;
+        position: relative;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .light .container .cell .image::before {
+        width: 85px;
+        height: calc(85% + 80px);
+        left: 0;
+        top: -20px;
+    }
+
+    .light .container .cell .image::after {
+        width: 45px;
+        height: 280px;
+        right: -18px;
+        top: 10px;
+    }
+
+    .light .container .cell .image img {
+        height: 90%;
+    }
+
+
+}
+
+/* end chicks page */
