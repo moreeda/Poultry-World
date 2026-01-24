@@ -1,2 +1,3 @@
 # Chicken-World
-This project Designed for giving help in Poultry production
+This project Designed to give help in Poultry production!
+
